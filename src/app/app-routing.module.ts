@@ -5,10 +5,11 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {HomePageComponent} from "./user/home-page/home-page.component";
 import {AuthGuard} from "./helper/auth-guard";
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [{
   path: '',
-  component: HomeComponent
+  component: AppComponent
   }, {
     path: 'login',
     component: LoginComponent
