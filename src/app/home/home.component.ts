@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {House} from "../model/house";
+import {HouseServiceService} from "../service/house-service.service";
 
 @Component({
   selector: 'app-home',
@@ -6,15 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isCheck: any;
-  constructor() { }
-
-  ngOnInit(): void {
-    if (localStorage.getItem('USERNAME') == null) {
-      this.isCheck = false;
-    } else {
-      this.isCheck = true;
-    }
+  houses: House[] = [];
+  constructor(private houseServiceService: HouseServiceService) {
   }
 
+  ngOnInit(): void {
+    this.showAll();
+  }
+
+  showAll() {
+    this.houseServiceService.findAll().subscribe((houses) => {
+      this.houses = houses;
+
+      console.log('house', houses);
+    }, error => {
+      console.log(error);
+    })
+  }
 }

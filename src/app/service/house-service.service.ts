@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 const API_URL = 'http://localhost:8080/home'
+const API = 'http://localhost:8080/houses'
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class HouseServiceService {
     return this.httpClient.get(API_URL);
   }
   save(house: any): Observable<any>{
-    return this.httpClient.post(API_URL , house);
+    return this.httpClient.post(API , house);
   }
+
 }

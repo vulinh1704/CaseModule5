@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {HouseServiceService} from "../service/house-service.service";
 import {Category} from "../model/category";
 import {CategoryService} from "../service/category.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-house',
@@ -23,7 +24,8 @@ export class AddHouseComponent implements OnInit {
   house: any;
   listCategories: Category[] = [];
   constructor(private houseServiceService: HouseServiceService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -49,8 +51,11 @@ export class AddHouseComponent implements OnInit {
       price: this.houseForm.value.price,
       owner:{
         id: localStorage.getItem('ID')
-      }
+      },
+      status: this.houseForm.value.status
     }
-    console.log(this.house)
+    this.houseServiceService.save(this.house).subscribe(() => {
+      this.router.navigate(['']);
+    })
   }
 }

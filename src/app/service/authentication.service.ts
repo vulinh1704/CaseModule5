@@ -26,12 +26,14 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.httpClient.post<any>(API_URL + 'login', {username, password})
       .pipe(map(user => {localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('ID', user.id);
         this.currentUserSubject.next(user);
         return user;
       }));
   }
 
   logout() {
+    localStorage.removeItem('ID');
     localStorage.removeItem('currentUser');
     localStorage.removeItem('USERNAME');
     localStorage.removeItem('ROLE');

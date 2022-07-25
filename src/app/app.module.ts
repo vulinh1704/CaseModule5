@@ -15,6 +15,7 @@ import {ErrorInterceptor} from "./helper/error-interceptor";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HouseComponent } from './house/house.component';
 import { AddHouseComponent } from './add-house/add-house.component';
+import { HouseDetailComponent } from './house-detail/house-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddHouseComponent } from './add-house/add-house.component';
     ListProductComponent,
     NavBarComponent,
     HouseComponent,
-    AddHouseComponent
+    AddHouseComponent,
+    HouseDetailComponent
   ],
   imports: [
     BrowserModule,
