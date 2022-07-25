@@ -7,6 +7,7 @@ import {AddHouseComponent} from "./add-house/add-house.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {HouseDetailComponent} from "./house-detail/house-detail.component";
+import {OrderComponent} from "./order/order.component";
 
 const routes: Routes = [{
   path: '',
@@ -23,12 +24,16 @@ const routes: Routes = [{
 }, {
   path: 'house-detail/:id',
   component: HouseDetailComponent
-},{
-    path: 'user',
-    canActivate: [AuthGuard],
-    component: HomePageComponent,
-    loadChildren: () => import('./user/user-routing.module').then(module => module.UserRoutingModule)
-  }];
+}, {
+  path: 'order/:id',
+  component: OrderComponent
+}, {
+  path: 'user',
+  canActivate: [AuthGuard],
+  component: HomePageComponent,
+  loadChildren: () => import('./user/user-routing.module').then(module => module.UserRoutingModule)
+}]
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

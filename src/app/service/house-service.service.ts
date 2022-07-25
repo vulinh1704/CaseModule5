@@ -23,4 +23,7 @@ export class HouseServiceService {
   findById(id: any):Observable<any>{
     return this.httpClient.get(API_URL + `/house/${id}`);
   }
+  edit(id:any , house: any){
+    return this.httpClient.put(API + `/${id}`, house);
+  }
 }
