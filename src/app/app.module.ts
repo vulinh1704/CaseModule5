@@ -12,6 +12,8 @@ import {HomePageComponent} from './user/home-page/home-page.component';
 import {ListProductComponent} from './user/list-product/list-product.component';
 import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
+import { Top5Component } from './thien/component/top5/top5.component';
+import { FindAllHouseComponent } from './thien/component/find-all-house/find-all-house.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {ErrorInterceptor} from "./helper/error-interceptor";
     LoginComponent,
     RegisterComponent,
     HomePageComponent,
-    ListProductComponent
+    ListProductComponent,
+    Top5Component,
+    FindAllHouseComponent,
   ],
   imports: [
     BrowserModule,

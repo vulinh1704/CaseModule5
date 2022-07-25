@@ -1,0 +1,38 @@
+<p>top2 nha duoc thue nhieu nhat</p>
+
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-9">
+    <h1>List house</h1>
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name House</th>
+        <th scope="col">Category</th>
+        <th scope="col">Address</th>
+        <th scope="col">Bathroom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Owner</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let house of houses; index as i">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{house.name}}</td>
+        <td>{{house.category.name}}</td>
+        <td>{{house.address}}</td>
+        <td>{{house.bathroom}}</td>
+        <td>{{house.description}}</td>
+        <td>{{house.owner.username}}</td>
+<!--
+        <td><button class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" [routerLink]="['/edit', house.id]">Sửa</button></td>
+-->
+<!--
+        <td><button class="btn btn-danger" (click)="deletehouse(house.id)">Xóa</button></td>
+-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
