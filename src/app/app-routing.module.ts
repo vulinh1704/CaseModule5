@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {AddHouseComponent} from "./add-house/add-house.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {HouseDetailComponent} from "./house-detail/house-detail.component";
 
 const routes: Routes = [{
   path: '',
@@ -17,8 +18,11 @@ const routes: Routes = [{
   path: 'login',
   component: LoginComponent
 }, {
-    path: 'register',
-    component: RegisterComponent
+  path: 'register',
+  component: RegisterComponent
+}, {
+  path: 'house-detail/:id',
+  component: HouseDetailComponent
 },{
     path: 'user',
     canActivate: [AuthGuard],

@@ -20,4 +20,7 @@ export class HouseServiceService {
     return this.httpClient.post(API , house);
   }
 
+  findById(id: any):Observable<any>{
+    return this.httpClient.get(API_URL + `/house/${id}`);
+  }
 }
