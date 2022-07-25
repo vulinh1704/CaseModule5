@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('ROLE', data.roles[0].authority);
       localStorage.setItem('USERNAME', data.username);
       if (data.roles[0].authority == "ROLE_USER") {
-        this.router.navigate(['/user']);
+        this.router.navigate([''])
+        // window.location.replace('http://localhost:4200/home');
       }
       // else {
       //   this.router.navigate(['/admin']);

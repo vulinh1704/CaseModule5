@@ -1,0 +1,32 @@
+
+<header *ngIf="isCheck">
+  <a href="#" class="logo"><span>Thiên Đường </span>Nhà</a>
+
+  <nav class="navbar">
+    <a href="#home">Trang chủ</a>
+    <a href="#services">Thêm nhà</a>
+    <a href="#featured">Hóa đơn</a>
+    <a href="#agents">Nhà của bạn</a>
+  </nav>
+
+  <div class="icons">
+    <a>{{username}}</a>
+    <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
+</header>
+
+<header *ngIf="!isCheck">
+  <a href="#" class="logo"><span>Thiên Đường </span>Nhà</a>
+
+  <nav class="navbar">
+    <a href="#home">Trang chủ</a>
+    <a href="#services">Thêm nhà</a>
+    <a href="#featured">Hóa đơn</a>
+    <a href="#agents">Nhà của bạn</a>
+  </nav>
+
+  <div class="icons">
+    <a routerLink="/login" class="fas fa-user"></a>
+  </div>
+</header>
+

@@ -1,5 +1,18 @@
-<form [formGroup]="loginForm"(ngSubmit)="login()">
-  <p>Username: <input type="text" formControlName="username"></p>
-  <p>Password: <input type="password" formControlName="password"></p>
-  <p><button type="submit">Login</button></p>
-</form>
+<app-nav-bar></app-nav-bar>
+<section class="home" id="home">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <h3>Đăng nhập</h3>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Tên tài khoản" formControlName = "username">
+    </div>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Mật khẩu" formControlName = "password">
+    </div>
+    <br>
+    <a routerLink="/register"><h2 style="color: #ff5a3c">Đăng kí ngay ?</h2></a>
+    <input type="submit" value="Đăng nhập" class="btn">
+  </form>
+</section>
+
+
+

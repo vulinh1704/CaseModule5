@@ -7,5 +7,6 @@ export interface UserToken {
   confirmPassword: string;
   accessToken: string;
   enabled: boolean;
+  phoneNumber: string;
   roles: Role[]
 }

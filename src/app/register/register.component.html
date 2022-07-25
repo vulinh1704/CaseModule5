@@ -1,1 +1,26 @@
-<p>register works!</p>
+<app-nav-bar></app-nav-bar>
+<section class="home" id="home">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h3>Đăng kí</h3>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Tên tài khoản" formControlName = "username">
+    </div>
+    <br>
+    <h4 *ngIf="!username?.valid && (username?.dirty ||username?.touched)" style="color: red">Vui lòng không để tên trống !</h4>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Mật khẩu" formControlName = "password">
+    </div>
+    <h4 *ngIf="!password?.valid && (password?.dirty ||password?.touched)" style="color: red">Vui lòng không để mật khẩu trống !</h4>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Xác Nhận Mật khẩu" formControlName = "confirmPassword">
+    </div>
+    <h4 *ngIf="checkConfirmPassword" style="color: red">Vui lòng nhập lại mật khẩu trên !</h4>
+    <div class="inputBox">
+      <input type="search" name="" placeholder="Số điện thoại" formControlName = "phone">
+    </div>
+    <h4 *ngIf="!phone?.valid && (phone?.dirty ||phone?.touched)" style="color: red">Vui lòng không để số điện thoại trống !</h4>
+    <br>
+    <input type="submit" value="Đăng kí" class="btn">
+
+  </form>
+</section>

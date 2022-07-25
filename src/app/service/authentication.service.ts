@@ -37,6 +37,8 @@ export class AuthenticationService {
     localStorage.removeItem('ROLE');
     localStorage.removeItem('ACCESS_TOKEN');
   }
-
+  register(user: any) {
+    return this.httpClient.post(API_URL + "register" , user);
+  }
 
 }

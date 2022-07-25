@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  isCheck: any;
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('USERNAME') == null) {
+      this.isCheck = false;
+    } else {
+      this.isCheck = true;
+    }
   }
 
 }

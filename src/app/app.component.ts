@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'loginjwt';
+  isCheck: any;
+  houses: any
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    if (localStorage.getItem('USERNAME') == null) {
+      this.isCheck = false;
+    } else {
+      this.isCheck = true;
+    }
+  }
 }

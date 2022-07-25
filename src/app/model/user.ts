@@ -6,5 +6,6 @@ export interface User {
   password: string;
   confirmPassword: string;
   enabled: boolean;
+  phone: string;
   roles: [Role];
 }
