@@ -21,6 +21,7 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { MyOrderComponent } from './my-order/my-order.component';
+import { HouseItemComponent } from './house-item/house-item.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MyOrderComponent } from './my-order/my-order.component';
     AddHouseComponent,
     HouseDetailComponent,
     OrderComponent,
-    MyOrderComponent
+    MyOrderComponent,
+    HouseItemComponent
   ],
   imports: [
     BrowserModule,

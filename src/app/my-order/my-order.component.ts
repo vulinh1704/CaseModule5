@@ -30,7 +30,7 @@ export class MyOrderComponent implements OnInit {
       for (let i = 0; i < orders.length; i++) {
         this.calculateTheDate(orders[i].startTime);
         console.log(this.total)
-        if (this.total < 1) {
+        if (this.total < 2) {
           this.check.push(true)
         } else {
           this.check.push(false);

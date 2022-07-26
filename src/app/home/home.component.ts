@@ -28,16 +28,17 @@ export class HomeComponent implements OnInit {
 
 
   showAll() {
+    this.images = []
     this.houseServiceService.findAll().subscribe((houses) => {
       this.houses = houses;
       for (let i = 0; i < houses.length; i++) {
         this.imageService.findByIdHouse(houses[i].id).subscribe((image) => {
-          this.images.push(image.image);
+          this.images.push(image);
         }, error => {
           console.log(error)
         })
       }
-      console.log('house', houses)
+      console.log('images', this.images)
     }, error => {
       console.log(error);
     })
@@ -52,7 +53,6 @@ export class HomeComponent implements OnInit {
       for (let i = 0; i < houses.length; i++) {
         this.imageService.findByIdHouse(houses[i].id).subscribe((image) => {
           this.imagesTop5.push(image.image);
-          console.log(this.imagesTop5)
         }, error => {
           console.log(error)
         })
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
     cus_end: new FormControl
   })
   houseSearch: any[] = [];
-  search() {        console.log(this.searchForm.value)
+  search() {
     this.houseServiceService.searchByAll(this.searchForm.value.address, this.searchForm.value.start, this.searchForm.value.end, this.searchForm.value.bathroom,
       this.searchForm.value.bedroom, this.searchForm.value.cus_begin, this.searchForm.value.cus_end).subscribe((houses) => {
         this.houseSearch = houses;

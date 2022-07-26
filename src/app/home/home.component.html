@@ -13,7 +13,7 @@
       <input type="number" name="" placeholder="Giá tiền đến" formControlName="end">
     </div>
 
-    <input type="submit" value="search property" class="btn">
+    <input type="submit" value="Tìm kiếm" class="btn">
 
   </form>
 
@@ -23,8 +23,9 @@
   <h1 class="heading"><span>Danh sách</span> nhà </h1>
   <div class="box-container">
     <div class="box" *ngFor="let house of houses; let i = index;">
+<!--      <app-house-item house="{{house}}"></app-house-item>-->
       <div class="image-container">
-        <img src="{{images[i]}}" alt="">
+        <img src="{{images[i].image}}">
         <div class="info">
           <h3>Sẵn sàng</h3>
         </div>
@@ -49,19 +50,19 @@
   </div>
 </section>
 
-<section class="agents" id="agents">
-  <h1 class="heading"> 5 căn nhà <span>được thuê nhiều nhất</span></h1>
-  <div class="box-container">
-    <div class="box" *ngFor="let house of top5Houses; let i = index">
-      <a href="#" class="fas fa-envelope"></a>
-      <a href="#" class="fas fa-phone"></a>
-      <img src="{{imagesTop5[i]}}" alt="">
-      <h3>{{house.name}}</h3>
-      <span>{{house.address}}</span>
-      <div class="share">
-        <button routerLink="/house-detail/{{house.id}}" class="btn">Xem chi tiết</button>
-      </div>
-    </div>
-  </div>
-</section>
+<!--<section class="agents" id="agents">-->
+<!--  <h1 class="heading"> 5 căn nhà <span>được thuê nhiều nhất</span></h1>-->
+<!--  <div class="box-container">-->
+<!--    <div class="box" *ngFor="let house of top5Houses; let i = index">-->
+<!--&lt;!&ndash;      <a href="#" class="fas fa-envelope"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;      <a href="#" class="fas fa-phone"></a>&ndash;&gt;-->
+<!--      <img src="{{imagesTop5[i]}}" alt="">-->
+<!--      <h3>{{house.name}}</h3>-->
+<!--      <span>{{house.address}}</span>-->
+<!--      <div class="share">-->
+<!--        <button routerLink="/house-detail/{{house.id}}" class="btn">Xem chi tiết</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
