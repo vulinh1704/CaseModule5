@@ -1,0 +1,15 @@
+<app-nav-bar></app-nav-bar>
+<section class="home" id="home">
+  <form [formGroup]="orderForm" (ngSubmit)="add()">
+    <h1 style="color: #ff5a3c">Thuê {{house.name}}</h1>
+    <div class="inputBox">
+      <input type="date" name="" placeholder="Ngày bắt đầu" formControlName = "startTime">
+    </div>
+    <div class="inputBox">
+      <input type="date" name="" placeholder="Ngày kết thúc" formControlName = "endTime" (change)="rent()">
+    </div>
+    <br>
+    <h1 style="color: #ff5a3c" *ngIf="check">Tổng tiền : {{total}}  <i class="fa-solid fa-coins"></i></h1>
+    <input type="submit" value="Thuê ngay" class="btn">
+  </form>
+</section>

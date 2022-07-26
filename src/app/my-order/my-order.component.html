@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<section class="home" id="home">
+  <form>
+    <h3 style="color: #ff5a3c">Hóa đơn của bạn</h3>
+    <br>
+    <table border="1" width="100%" style="color:rgba(0,0,0,0.78);">
+      <tr>
+      <th><h1>Tên căn nhà</h1></th>
+      <th><h1>Ngày bắt đầu</h1></th>
+      <th><h1>Ngày kết thúc</h1></th>
+      <th><h1>Tổng tiền</h1></th>
+      <th><h1>Hủy đơn</h1></th>
+      </tr>
+      <tr *ngFor="let order of listOrder; let i = index">
+        <th><h1>{{order.house.name}}</h1></th>
+        <th><h1>{{order.startTime}}</h1></th>
+        <th><h1>{{order.endTime}}</h1></th>
+        <th><h1>{{order.total}} <i class="fa-solid fa-coins"></i></h1></th>
+        <td><input *ngIf="!check[i]" type="submit" value="Hủy đơn" class="btn" disabled style="background: #666666; color: #f7f7f7"><input *ngIf="check[i]" type="submit" value="Hủy đơn" class="btn" (click)="updateOrder(order.id)"></td>
+      </tr>
+    </table>
+  </form>
+</section>

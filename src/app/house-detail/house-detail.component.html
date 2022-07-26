@@ -1,0 +1,42 @@
+<app-nav-bar></app-nav-bar>
+<section class="home" id="home">
+  <form>
+    <h3 style="color: #ff5a3c">Chi tiết nhà</h3>
+    <div class="inputBox">
+      <h1>Tên nhà : {{house.name}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Loại nhà : {{house.category.name}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Địa chỉ : {{house.address}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Số phòng ngủ : {{house.bedroom}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Số phòng tắm : {{house.bathroom}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Mô tả : {{house.description}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Giá : {{house.price}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Trạng thái : {{statusHouse}}</h1>
+    </div>
+    <div class="inputBox">
+      <h1>Chủ căn nhà : {{house.owner.username}}</h1>
+    </div>
+    <br>
+    <div class="inputBox">
+      <div *ngFor="let image of images">
+        <img src="{{image.image}}" style="width: 100px; height: 100px">
+      </div>
+    </div>
+    <input type="submit" value="Thuê ngay" class="btn" routerLink="/order/{{house.id}}">
+
+  </form>
+</section>
+
