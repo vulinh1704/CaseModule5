@@ -34,7 +34,7 @@
       </select>
     </div>
     <br>
-    <input type="file" placeholder="Chọn ảnh">
+    <input type="file" placeholder="Chọn ảnh" id="file" #userPhoto multiple (change)="showPreview($event)" name="image" autocomplete="off">
     <input type="submit" value="Đăng ngay" class="btn">
 
   </form>

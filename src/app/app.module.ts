@@ -17,6 +17,11 @@ import { HouseComponent } from './house/house.component';
 import { AddHouseComponent } from './add-house/add-house.component';
 import { HouseDetailComponent } from './house-detail/house-detail.component';
 import { OrderComponent } from './order/order.component';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { MyOrderComponent } from './my-order/my-order.component';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +35,16 @@ import { OrderComponent } from './order/order.component';
     HouseComponent,
     AddHouseComponent,
     HouseDetailComponent,
-    OrderComponent
+    OrderComponent,
+    MyOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [
     {

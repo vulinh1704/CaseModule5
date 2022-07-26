@@ -8,31 +8,35 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {HouseDetailComponent} from "./house-detail/house-detail.component";
 import {OrderComponent} from "./order/order.component";
+import {MyOrderComponent} from "./my-order/my-order.component";
 
 const routes: Routes = [{
-  path: '',
-  component: HomeComponent
-}, {
-  path: 'add-house',
-  component: AddHouseComponent
-}, {
-  path: 'login',
-  component: LoginComponent
-}, {
-  path: 'register',
-  component: RegisterComponent
-}, {
-  path: 'house-detail/:id',
-  component: HouseDetailComponent
-}, {
-  path: 'order/:id',
-  component: OrderComponent
-}, {
-  path: 'user',
-  canActivate: [AuthGuard],
-  component: HomePageComponent,
-  loadChildren: () => import('./user/user-routing.module').then(module => module.UserRoutingModule)
-}]
+    path: '',
+    component: HomeComponent
+  }, {
+    path: 'add-house',
+    component: AddHouseComponent
+  }, {
+    path: 'login',
+    component: LoginComponent
+  }, {
+    path: 'register',
+    component: RegisterComponent
+  }, {
+    path: 'house-detail/:id',
+    component: HouseDetailComponent
+  }, {
+    path: 'order/:id',
+    component: OrderComponent
+  }, {
+    path: 'my-order/:id',
+    component: MyOrderComponent
+  }, {
+    path: 'user',
+    canActivate: [AuthGuard],
+    component: HomePageComponent,
+    loadChildren: () => import('./user/user-routing.module').then(module => module.UserRoutingModule)
+  }]
 ;
 
 @NgModule({

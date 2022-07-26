@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class NavBarComponent implements OnInit {
   isCheck: any;
   username = localStorage.getItem('USERNAME');
-
+  id: any = localStorage.getItem('ID');
   constructor(private authenticationService: AuthenticationService,
               private router: Router) {
   }

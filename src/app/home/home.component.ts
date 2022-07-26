@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {House} from "../model/house";
 import {HouseServiceService} from "../service/house-service.service";
+import {ImageService} from "../service/image.service";
+import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,18 +11,28 @@ import {HouseServiceService} from "../service/house-service.service";
 })
 export class HomeComponent implements OnInit {
   houses: House[] = [];
-  constructor(private houseServiceService: HouseServiceService) {
+  image:any;
+  images: any[] = [];
+  constructor(private houseServiceService: HouseServiceService,
+              private imageService: ImageService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.showAll();
   }
 
+
   showAll() {
     this.houseServiceService.findAll().subscribe((houses) => {
       this.houses = houses;
-
-      console.log('house', houses);
+      for (let i = 0 ; i < houses.length; i++)
+      this.imageService.findByIdHouse(houses[i].id).subscribe((image) => {
+        this.images.push(image.image);
+      }, error => {
+        console.log(error)
+      })
+      console.log('house', houses)
     }, error => {
       console.log(error);
     })

@@ -120,9 +120,9 @@
 <section class="featured" id="featured">
   <h1 class="heading"> <span>Danh sách</span> nhà </h1>
   <div class="box-container">
-    <div class="box" *ngFor="let house of houses">
+    <div class="box" *ngFor="let house of houses; let i=index;">
       <div class="image-container">
-        <img src="assets/images/img-1.jpg" alt="">
+        <img src="{{images[i]}}" alt="">
         <div class="info">
           <h3>Sẵn sàng</h3>
         </div>
