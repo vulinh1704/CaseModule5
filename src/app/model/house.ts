@@ -12,4 +12,5 @@ export interface House {
   price: number;
   owner: User;
   status: number;
+  image: string;
 }

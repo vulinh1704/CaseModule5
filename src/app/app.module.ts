@@ -13,7 +13,6 @@ import {ListProductComponent} from './user/list-product/list-product.component';
 import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HouseComponent } from './house/house.component';
 import { AddHouseComponent } from './add-house/add-house.component';
 import { HouseDetailComponent } from './house-detail/house-detail.component';
 import { OrderComponent } from './order/order.component';
@@ -21,7 +20,7 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { MyOrderComponent } from './my-order/my-order.component';
-import { HouseItemComponent } from './house-item/house-item.component';
+
 
 
 @NgModule({
@@ -33,12 +32,10 @@ import { HouseItemComponent } from './house-item/house-item.component';
     HomePageComponent,
     ListProductComponent,
     NavBarComponent,
-    HouseComponent,
     AddHouseComponent,
     HouseDetailComponent,
     OrderComponent,
-    MyOrderComponent,
-    HouseItemComponent
+    MyOrderComponent
   ],
   imports: [
     BrowserModule,

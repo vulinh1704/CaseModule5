@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       this.houses = houses;
       for (let i = 0; i < houses.length; i++) {
         this.imageService.findByIdHouse(houses[i].id).subscribe((image) => {
-          this.images.push(image);
+          houses[i].image = image.image;
         }, error => {
           console.log(error)
         })
